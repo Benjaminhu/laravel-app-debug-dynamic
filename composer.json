@@ -1,0 +1,53 @@
+{
+    "name": "benjaminhu/laravel-app-debug-dynamic",
+    "description": "Enabling Laravel APP_DEBUG dynamically in production environment",
+    "authors": [
+        {
+            "name": "Benjamin Simon"
+        }
+    ],
+    "type": "library",
+    "keywords": [
+        "laravel",
+        "middleware",
+        "app debug",
+        "debug",
+        "request"
+    ],
+    "require": {
+        "php" : ">=8.0",
+        "illuminate/http": "^5.0|^6.0|^7.0|^8.0|^9.0",
+        "illuminate/support": "^5.0|^6.0|^7.0|^8.0|^9.0",
+        "laravel/framework": "^8.54"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "orchestra/testbench": "^7.6"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Benjaminhu\\LaravelAppDebugDynamic\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Benjaminhu\\LaravelAppDebugDynamic\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": [
+            "XDEBUG_MODE=coverage ./vendor/bin/phpunit"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Benjaminhu\\LaravelAppDebugDynamic\\AppDebugDynamicServiceProvider"
+            ],
+            "aliases": {
+                "AppDebugDynamic": "Benjaminhu\\LaravelAppDebugDynamic\\Facades\\AppDebugDynamic"
+            }
+        }
+    }
+}

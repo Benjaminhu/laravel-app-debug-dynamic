@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         verbose="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+    >
+    <coverage>
+        <include>
+            <directory suffix=".php">src/</directory>
+        </include>
+        <report>
+            <clover outputFile="build/logs/clover.xml"/>
+            <html outputDirectory="build/coverage-html/" lowUpperBound="35" highLowerBound="70"/>
+            <php outputFile="build/coverage-php.php"/>
+            <text outputFile="build/coverage.txt"/>
+        </report>
+    </coverage>
+
+    <testsuites>
+        <testsuite name="App Debug Dynamic Middleware Test Suite">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <logging>
+        <junit outputFile="build/report.junit.xml"/>
+        <testdoxHtml outputFile="build/testdox.html"/>
+        <testdoxText outputFile="build/testdox.txt"/>
+        <text outputFile="build/logfile.txt"/>
+    </logging>
+
+    <php>
+        <server name="APP_DEBUG" value="0"/>
+        <server name="APP_ENV" value="testing"/>
+    </php>
+</phpunit>

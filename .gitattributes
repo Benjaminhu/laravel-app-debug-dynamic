@@ -1,0 +1,25 @@
+* text=auto
+
+###### Git
+.gitattributes text
+.gitignore text
+
+##### Global
+# Documents
+*.md text
+*README* text
+# Configuration
+*.json text
+*.lock text
+*.xml text
+*.xml.dist text
+
+##### Language
+# PHP
+*.php text
+
+##### Export-ignore
+.gitattributes export-ignore
+.gitignore export-ignore
+phpunit.xml.dist export-ignore
+tests export-ignore
